@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /*Primary color*/
+    --orange: hsl(25, 97%, 53%); /*icon and buttons*/
+
+    /* natural colors */
+    --White: hsl(0, 0%, 100%); /*heading font color*/
+    --Light_Grey: hsl(217, 12%, 63%); /*p font*/
+    --Medium_Grey: hsl(216, 12%, 54%); /*p font*/
+    --Dark_Blue: hsl(215, 20%, 16%); /*card bg*/
+    --Very_Dark_Blue: hsl(216, 12%, 8%); /* body bg*/
+    --new_color:hsl(210, 19%, 18%);
+}
+body{
+    font-family: 'Overpass', sans-serif;
+    background: var(--Very_Dark_Blue);
+}
+.attribution { font-size: 11px; text-align: center; color: var(--White); }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    width: 25%;
+    height: 55vh;
+    background: var(--Dark_Blue);
+    border-radius: 20px;
+    padding: 20px;
+}
+.icon{
+    background: var(--new_color);
+    color: var(--orange);
+    border-radius: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.card h2{
+    color: var(--White);
+}
+.card p{
+    margin: 10px 0 10px 0;
+    color: var(--Medium_Grey);
+    font-size: 15px;
+    line-height: 23px;
+}
+/* input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+input[type="Radio"]{
+    transform: scale(3);
+    margin: 15px;
+    background: var(--new_color);
+} */
+input[type="Radio"]{
+    display: none;
+}
+label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--new_color);
+    color: var(--Medium_Grey);
+    cursor: pointer;
+  }
+label{
+    transform: scale(3);
+    margin: 20px;
+    font-size: 15px;
+}
+input[type="Radio"]:checked + label{ 
+    background: var(--Medium_Grey);
+    color: var(--White);
+}
+input[type="Radio"]:hover + label{
+    background: var(--orange);
+    color: var(--White);
+}
+span{
+    transform: scale(0.5);
+}
+.btn{
+    margin-top: 13px;
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    border: 0;
+    cursor: pointer;
+    background: var(--orange);
+    color: var(--White);
+}
+.btn:hover{
+    background: var(--White);
+    color: var(--orange);
+}
+
+/* thankyou state */
+.card.hidden{
+    text-align: center;
+}
+.card.hidden p, h6{
+    font-size: 13px;
+}
+
+h6{
+    position: relative;
+    color: var(--orange);
+    font-weight: normal;
+    background: var(--new_color);
+    border-radius:15px ;
+    padding: 7px;
+    width: fit-content;
+    margin-bottom: 10px;
+    left:22%;
+}
+.hidden{
+    display: none;
+}
+
+/* --- responsive design part */
+
+/* laptop medium*/
+@media only screen and (max-width: 1024px){
+    .card{
+        width: 34%;
+        height: 60vh;
+    }
+    label {
+        transform: scale(2.5);
+        margin-bottom: 30px;
+      }
+}
+
+/* for tablet screens*/
+
+@media only screen and (max-width:768px){
+    .card{
+        width: 75%;
+        height: 60vh;
+    }
+    label{
+        margin: 8%;
+        transform: scale(3);
+    }
+
+}
+ /* for  mobile large */
+@media only screen and (max-width:425px){
+    .card{
+        width: 90%;
+    }
+    label{
+        transform: scale(2.5);
+        margin:23px;
+    }
+
+}
+
+
+/* for medium screen @375px */
+
+@media only screen and (max-width:375px){
+    .card{
+        width: 90%;
+    }
+    label{
+        transform: scale(2);
+         margin: 19px; 
+    }
+
+}
+
+/* for small screen */
+@media only screen and (max-width:320px){
+    label{
+        transform: scale(2);
+        margin: 15px;
+    }
+
+} 
